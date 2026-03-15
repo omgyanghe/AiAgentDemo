@@ -26,12 +26,15 @@ class Agent:
             action, action_input = parse_action(response)
 
             if action in TOOLS:
-                # 获取函数签名
+
                 func = TOOLS[action]
+                # 获取函数签名
                 sig = inspect.signature(func)
+                # 获取参数信息
                 params = list(sig.parameters.keys())
                 
                 # 解析 action_input 为 JSON
+                # !!! 这里要注意参数量为多个的情况。
                 try:
                     input_data = json.loads(action_input)
                     # 如果是字典，按参数名传递
