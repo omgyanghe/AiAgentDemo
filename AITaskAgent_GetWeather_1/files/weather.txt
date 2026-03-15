@@ -1,0 +1,2 @@
+New York天气: 15°C Cloudy
+Los Angeles: 22°C Sunny
